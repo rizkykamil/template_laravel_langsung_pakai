@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::group(['prefix' => 'nama-prefix'], function () {
+    Route::get('/nama-setelah-prefix', [NamaController::class, 'NamaFunction'])->name('label.nama');
 });
